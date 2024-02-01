@@ -231,6 +231,9 @@ if (videoElement && navigator.mediaDevices.getUserMedia) {
         });
 }
 
+document.querySelector('svg').addEventListener('click', () => {
+    videoElement.parentElement.remove();
+})
 
 // setup()
 // update() => log_table => diffing => filtered-cells => one-one mapping => update element
