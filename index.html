@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        td {
+            outline: 1px solid gray;
+        }
+        table {
+            height: 100%;
+            width: auto;
+        }
+        td {
+            width: 200px;
+            height: 175px;
+        }
+        div.circle-wrapper {
+            display: flex;
+            justify-content: space-around;
+        }
+        video {
+            transform: scalex(-1);
+            width: 300px;
+            height: 300px;
+        }
+        div.wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div id="game"></div>
+    <video id="webcam" autoplay></video>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
