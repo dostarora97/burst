@@ -1,4 +1,5 @@
 const game = document.getElementById('game');
+const div_wrapper = document.querySelector('.wrapper');
 const color_div_element = document.createElement('div');
 const width = 5, height = 5;
 
@@ -76,6 +77,14 @@ function hasLeft(j) {
 
 function hasRight(j) {
     return j !== width - 1;
+}
+
+function nextTurn() {
+    turn = turn + 1;
+    color_turn = colors[turn%colors.length];
+    color_element.data = color_turn;
+    color_div_element.style.color = color_turn;
+    div_wrapper.style.backgroundColor = color_turn === 'red' ? 'lightpink' : 'lightblue';
 }
 
 function burstCell(i, j) {
@@ -162,10 +171,11 @@ function update(i, j) {
         }
     }
 
-    turn = turn + 1;
-    color_turn = colors[turn%colors.length];
-    color_element.data = color_turn;
-    color_div_element.style.color = color_turn;
+    nextTurn();
+    // turn = turn + 1;
+    // color_turn = colors[turn%colors.length];
+    // color_element.data = color_turn;
+    // color_div_element.style.color = color_turn;
 }
 
 function setup(log_table) {
@@ -196,10 +206,11 @@ function setup(log_table) {
 
 // color_turn = colors[0];
 setup(log_table);
-turn = turn + 1;
-color_turn = colors[turn%colors.length];
-color_element.data = color_turn;
-color_div_element.style.color = color_turn;
+// turn = turn + 1;
+// color_turn = colors[turn%colors.length];
+// color_element.data = color_turn;
+// color_div_element.style.color = color_turn;
+nextTurn();
 
 const videoElement = document.getElementById("webcam");
 let xPosition = 0, yPosition = 0;
