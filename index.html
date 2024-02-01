@@ -36,12 +36,23 @@
             flex-direction: row;
             justify-content: space-around;
         }
+        svg {
+            position: absolute;
+            top: 40px;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
 <div class="wrapper">
     <div id="game"></div>
-    <video id="webcam" autoplay></video>
+    <div>
+        <svg width="20" height="20" viewBox="0 0 20 20">
+            <line x1="2" y1="2" x2="18" y2="18" stroke="black" stroke-width="3" />
+            <line x1="18" y1="2" x2="2" y2="18" stroke="black" stroke-width="3" />
+        </svg>
+        <video id="webcam" autoplay></video>
+    </div>
 </div>
 <script src="game.js"></script>
 </body>
